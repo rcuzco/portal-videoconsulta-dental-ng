@@ -1,0 +1,80 @@
+<div class="chat-container-border" [hidden]="bubbleChat">
+  <div class="chat-top u-flex u-flex-justify-content-between u-flex-align-items-center">
+    <div class="bold">{{'CHAT.TITLE' | translate}}</div>
+    <div class="contract-btn u-flex" (click)="getSmallChat()">
+      {{'CHAT.MINIMIZE' | translate}}
+      <i class="icon-navigate_next"></i>
+    </div>
+  </div>
+  <form class="chat-body" [formGroup]="formChat" (keyup.enter)="onSubmit($event)" (keydown.enter)="preventNewLine($event)">
+    <!-- DIV MENSAJES CHAT -->
+    <!-- <div class="messages-container" #msgHistory>
+    </div> -->
+    <div class="messages-container" #msgHistory [scrollTop]="msgHistory.scrollHeight">
+      <ul>
+        <li *ngFor="let message of chatMessages; trackBy:orderMessages">
+          <div *ngIf="message.name" [ngClass]="'name-' + message.owner">
+            {{message.name}}
+          </div>
+          <div *ngIf="message.text" [ngClass]="message.owner">
+            {{message.text}}
+          </div>
+          <a [href]="message.img" [download]="message.fileName" *ngIf="message.img">
+            <img [src]="message.img">
+          </a>
+          <div *ngIf="message.doc" [ngClass]="message.owner" class="doc-file">
+            <i class="icon-down"></i>
+            <div (click)="showPDF(message.doc, message.fileName)">{{message.fileName}}</div>
+          </div>
+        </li>
+      </ul>
+      <div class="error-doc u-flex u-flex-justify-content-between" *ngIf="showAlertTypeFile">
+        <div class="alert-txt">{{ 'CHAT.ERROR_TYPE_FILE' | translate:{ types: typesFile } }}</div>
+        <i class="icon-close" (click)="toggleAlertTypeFile()"></i>
+      </div>
+    </div>
+    <!-- DIV MENSAJE ARCHIVO SUBIDO -->
+    <div class="mine doc-file">
+      <i class="icon-down"></i>
+      <div>
+        {{'CHAT.FILE_NAME' | translate}}
+      </div>
+    </div>
+    <div class="control-container">
+      <!-- DIV MENSAJE ALERTA -->
+      <div class="alert u-flex u-flex-justify-content-between" *ngIf="showAlertSizeFile">
+        <i class="icon-atention"></i>
+        <div class="alert-txt">{{ 'CHAT.ERROR_MAX_SIZE_FILE' | translate:{ size: maxMBSizeFile } }}</div>
+        <i class="icon-close" (click)="toggleAlertSizeFile()"></i>
+      </div>
+      <!-- INPUT TEXTO CHAT -->
+      <div class="insert-text-container">
+        <textarea type="text" class="form-control" id="text" formControlName="textChat" placeholder="" autocomplete="off"></textarea>
+        <div class="send-btn" (click)="onSubmit()">
+          <i class="icon-arrow"></i>
+        </div>
+      </div>
+
+      <!-- INPUT SYUBIDA ARCHIVA -->
+      <div class="upload-file-container">
+        <div class="u-flex u-flex-align-items-center u-width-100">
+          <i class="icon-up"></i>
+          <div class="upload-file-txt">
+            {{'CHAT.UPLOAD_FILE' | translate}}
+          </div>
+        </div>
+        <input type="file" class="custom-file-input" id="file" (change)="addFiles($event)"
+          formControlName="file" accept="{{ typesFile }}" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- BOCADILLO CHAT RESPONSIVE -->
+<div class="chat-bubble-position">
+  <div class="chat-bubble" *ngIf="bubbleChat" (click)="getSmallChat()">
+    <i class="icon-chat">
+      <div *ngIf="iconNotification" class="notification"></div>
+    </i>
+  </div>
+</div>

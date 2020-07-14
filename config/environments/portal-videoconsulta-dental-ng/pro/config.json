@@ -1,0 +1,12 @@
+{
+  "apiUrl": "https://api.sanitas.es/videocalls-ms/api/v1",
+  "apiToken": "apikey 489Iq1gYoZVrozlz9Xp8yVjBAti4Fx6X",
+  "tokbox": {
+    "API_KEY": "46774714"
+  },
+  "chat":{
+    "chunkFile":"1000",
+    "maxSizeFile":"2000000",
+    "typesFile": "image/jpg,image/jpeg,application/pdf"
+  }
+}

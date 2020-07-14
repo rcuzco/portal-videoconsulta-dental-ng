@@ -1,0 +1,57 @@
+{
+  "UTILS": {
+    "OF": "de"
+  },
+  "HELLO":"Hola Bienvenido a {{value}}",
+  "VIDEO_DEMO": {
+    "TITLE": "<strong>Vídeo Consulta Sanitas Dental</strong>"
+  },
+  "WAITING_ROOM": {
+    "TITLE": "<strong>Hola, </strong><br>Estas en la sala de espera para tu cita programada"
+  },
+  "HUNG_UP": {
+    "TITLE": "<strong>Hola, </strong><br>Parece que la videoconsulta se ha cortado"
+  },
+  "CHAT": {
+    "TITLE": "Chat",
+    "FILE_NAME": "nombre archivo",
+    "UPLOAD_FILE": "Cargar archivo",
+    "MINIMIZE": "Contraer chat",
+    "ERROR_MAX_SIZE_FILE": "El tamaño máximo de envio de ficheros es: {{size}} Mb",
+    "ERROR_TYPE_FILE": "El documento no es de tipo: {{types}}"
+  },
+  "DISCONNECTED": {
+    "GREETING": "Hola,",
+    "NOT_STARTED": {
+      "TITLE": "Tu cita comenzará a las",
+      "TEXT": "Puedes esperar en esta sala o conectarte más tarde. Tu odontólogo se conectará a la hora de tu cita"
+    },
+    "HELP_TEXT": {
+      "TITLE": "Si tu videoconsulta ha finalizado:",
+      "TEXT": "Sigue cuidando la salud de tu sonrisa. Con la garantía de un gran grupo sanitario."
+    },
+    "OVER": {
+      "TITLE": "Tu cita estaba programada para:",
+      "TEXT": "Esta cita ya no se encuentra activa. Si lo deseas puedes ponerte en contacto con tu clínica para solicitar una nueva cita. ¡Gracias!."
+    },
+    "HUNG_UP": {
+      "TITLE": "Has salido de tu vídeoconsulta:",
+      "BUTTON": "Entrar",
+      "TEXT": "Por favor vuelve a entrar a la sala para continuar la consulta."
+    }
+  },
+  "MONTHS": {
+    "January": "Enero",
+    "February": "Febrero",
+    "March": "Marzo",
+    "April": "Abril",
+    "May": "Mayo",
+    "June": "Junio",
+    "July": "Julio",
+    "August": "Agosto",
+    "September": "Septiembre",
+    "October": "Octubre",
+    "November": "Noviembre",
+    "December": "Diciembre"
+  }
+}

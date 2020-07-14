@@ -1,0 +1,33 @@
+input,
+select,
+textarea,
+button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-font-smoothing: inherit;
+  line-height: normal;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+}
+
+input {
+  &::-ms-reveal,
+  &::-ms-clear {
+    display: none;
+  }
+  &::placeholder {
+    opacity: 1;
+  }
+}
+
+button {
+  cursor: pointer;
+}

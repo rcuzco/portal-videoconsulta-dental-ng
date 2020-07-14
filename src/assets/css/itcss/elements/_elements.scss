@@ -1,0 +1,25 @@
+/* 04 - ELEMENTS: Estilos para elementos HTML (no clases)
+   ========================================================================== */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: $color-white-smoke;
+  color: $color-black;
+  font-family: $font-sans;
+}
+
+pre {
+  white-space: pre-wrap;
+}

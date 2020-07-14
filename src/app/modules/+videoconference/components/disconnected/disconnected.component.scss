@@ -1,0 +1,127 @@
+.overlay-background {
+  align-items: center;
+  background: url('assets/img/bg/waiting-room-bg.png');
+  background-size: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 var(--black-shadow);
+  display: flex;
+  height: 434px;
+  justify-content: center;
+  width: 70%;
+}
+
+.date {
+  &-greeting {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &-headline {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &-txt {
+    font-size: 18px;
+    line-height: 1.67;
+  }
+
+  &-time {
+    font-size: 48px;
+    line-height: 1.17;
+  }
+
+  &-day {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+}
+
+.date-to-start {
+  .date-headline,
+  .icon-clock:before {
+    color: var(--cyan);
+  }
+}
+
+.date-is-over {
+  .date-headline,
+  .icon-clock:before {
+    color: var(--error-red);
+  }
+}
+
+.date-disconected {
+  .date-headline,
+  .icon-clock:before {
+    color: var(--green);
+  }
+  
+  .date-txt {
+    font-size: 48px;
+    line-height: 1.17;
+    cursor: pointer;
+  }
+}
+
+.overlay-info-container {
+  background-color: var(--white85);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 var(--pagination-shadow);
+  color: var(--real-black);
+  margin: 0 1rem;
+  padding: 3rem;
+  max-width: 370px;
+  &:nth-child(2) {
+    .date-headline {
+      color: var(--cyan);
+    }
+  }
+}
+
+.icon-clock,
+.icon-phone-on {
+  font-size: 44px;
+  padding-top: 6px;
+}
+
+.headline-small {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+//RESPONSIVE
+@media only screen and (max-width: 768px) {
+  .waiting-room-container {
+    margin: 0 -15px;
+    margin-top: 4rem;
+  }
+
+  .overlay {
+    &-background {
+      box-shadow: none;
+      position: relative;
+      top: 10rem;
+      width: 100%;
+    }
+    
+    &-info-container {
+      left: 3rem;
+      position: absolute;
+      top: -10rem;
+      margin: 0;
+    }
+
+    &-info-container:nth-child(2) {
+      top: 15rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .overlay-info-container {
+    width: calc(100% - 2rem);
+    left: 1rem;
+  }
+}

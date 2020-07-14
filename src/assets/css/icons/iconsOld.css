@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?qrdqir');
+  src:  url('fonts/icomoon.eot?qrdqir#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qrdqir') format('truetype'),
+    url('fonts/icomoon.woff?qrdqir') format('woff'),
+    url('fonts/icomoon.svg?qrdqir#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-miniature-off:before {
+  content: "\e918";
+  color: #ffffff;
+}
+.icon-speaker-off:before {
+  content: "\e916";
+}
+.icon-phone-on:before {
+  content: "\e915";
+  color: #007a3d;
+}
+.icon-clock:before {
+  content: "\e914";
+}
+.icon-close:before {
+  content: "\e912";
+  color: #db3907;
+}
+.icon-atention:before {
+  content: "\e911";
+  color: #db3907;
+}
+.icon-camera-off:before {
+  content: "\e91e";
+  color: #00335b;
+}
+.icon-mic-off:before {
+  content: "\e917";
+}
+.icon-chat:before {
+  content: "\e913";
+  color: #fff;
+}
+.icon-phone-off:before {
+  content: "\e900";
+  color: #db3907;
+}
+.icon-phone-off-sm:before {
+  content: "\e901";
+  color: #db3907;
+}
+.icon-mic:before {
+  content: "\e902";
+  color: #0079c8;
+}
+.icon-mic-sm:before {
+  content: "\e903";
+  color: #0079c8;
+}
+.icon-camera:before {
+  content: "\e904";
+  color: #0079c8;
+}
+.icon-camera-sm:before {
+  content: "\e905";
+  color: #0079c8;
+}
+.icon-miniature:before {
+  content: "\e906";
+  color: #0079c8;
+}
+.icon-speaker:before {
+  content: "\e907";
+  color: #0079c8;
+}
+.icon-speaker-sm:before {
+  content: "\e908";
+  color: #0079c8;
+}
+.icon-arrow:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-arrow-sm:before {
+  content: "\e90a";
+  color: #fff;
+}
+.icon-up:before {
+  content: "\e90b";
+  color: #0079c8;
+}
+.icon-down:before {
+  content: "\e90c";
+  color: #0079c8;
+}
+.icon-navigate_before:before {
+  content: "\e90d";
+}
+.icon-navigate_next:before {
+  content: "\e90e";
+}
+.icon-expand_less:before {
+  content: "\e90f";
+}
+.icon-expand_more:before {
+  content: "\e910";
+}

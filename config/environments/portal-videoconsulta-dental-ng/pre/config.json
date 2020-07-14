@@ -1,0 +1,12 @@
+{
+  "apiUrl": "https://bupanp-sanitas-pre.apigee.net/videocalls-ms/api/v1",
+  "apiToken": "apikey CSb98aKP83AfGNyypWkfSrJILTkGvrqG",
+  "tokbox": {
+    "API_KEY": "46603142"
+  },
+  "chat":{
+    "chunkFile":"1000",
+    "maxSizeFile":"2000000",
+    "typesFile": "image/jpg,image/jpeg,application/pdf"
+  }
+}

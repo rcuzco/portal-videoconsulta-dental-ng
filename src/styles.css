@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* IMPORTS */
+/* variables */
+@import "assets/css/variables.scss";
+/* arquitectura básica */
+@import "assets/css/basics.scss";
+/* Iconos */
+@import "assets/css/icons/icons.css";
+/* Texto */
+@import "assets/css/_text.scss";
+/* Fuentes */
+/* @import "assets/css/fonts/fonts.css"; */

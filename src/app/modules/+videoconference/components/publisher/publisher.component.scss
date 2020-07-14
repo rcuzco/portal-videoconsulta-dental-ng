@@ -1,0 +1,117 @@
+.publisher-container {
+  height: 100%;
+  width: 100%;
+}
+
+.publisher-miniature {
+  display: none;
+}
+
+.icon-miniature {
+  font-size: 32px;
+}
+
+.setting-btn {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 66px;
+
+  &-position {
+    margin: 0 auto;
+    max-width: 1125px;
+    position: absolute;
+    width: 100%;
+  }
+
+  &-container {
+    justify-content: center;
+    width: calc(70% - 1rem);
+  }
+
+  &__txt {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  i {
+    font-size: 32px;
+    margin-bottom: 1rem;
+  }
+}
+
+:host ::ng-deep {
+  .OT_publisher {
+    height: 100%;
+    width: 100%;
+
+    .OT_bar.OT_edge-bar-item,
+    .OT_bar.OT_edge-bar-item,
+    .OT_name.OT_edge-bar-item {
+      display: block;
+      opacity: 1;
+      top: calc(100% - 34px);
+    }
+
+    .OT_name {
+      font-size: 16px;
+      left: 0;
+      padding: 0 1rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .publisher-container {
+    height: calc(100% - 100px);
+    position: relative;
+  }
+
+  .icon-miniature {
+    bottom: calc(100px + 230px);
+    display: block;
+    left: 1.5rem;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .setting-btn {
+    &-container {
+      width: 100%;
+    }
+
+    i {
+      font-size: 28px;
+      margin-bottom: 0.3rem;
+    }
+
+    &__txt {
+      font-size: 10px;
+    }
+
+    &:nth-child(4) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .OT_publisher {
+    height: 200px;
+    width: 160px;
+  }
+
+  .setting-btn {
+    margin: 0.5rem 0;
+  }
+
+  .icon-miniature {
+    bottom: calc(100px + 200px);
+  }
+}

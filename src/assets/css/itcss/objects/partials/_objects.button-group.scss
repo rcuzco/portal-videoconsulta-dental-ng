@@ -1,0 +1,115 @@
+// Grupo de botones
+// -------------------------
+
+$module: '.o-btn-group';
+
+#{$module} {
+  @include sas-rem(height, 32px);
+  display: inline-flex;
+  
+  &__btn {
+    @include sas-rem(
+      (
+        font-size: 11px,
+        padding-left: 24px,
+        padding-right: 24px
+      )
+    );
+    @include sas-transition(color background-color);
+    background-color: $color-white;
+    border: 1px solid $color-cerulean;
+    color: $color-cerulean;
+    font-weight: 500;
+    &:first-child {
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+    &:last-child {
+      border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    &:not(:last-child) {
+      border-right: 0;
+    }
+    &:hover,
+    &.is-active {
+      background-color: $color-cerulean;
+      color: $color-white;
+    }
+    &:active {
+      background-color: $color-silver;
+      color: $color-night-rider;
+      transition: none;
+    }
+    &.is-active {
+      pointer-events: none;
+    }
+  }
+  &__ico {
+    @include sas-rem(
+      (
+        font-size: 40px,
+        margin-bottom: 8px
+      )
+    );
+    line-height: 1.5;
+    text-align: center;
+    &::before {
+      @include sas-rem(
+        (
+          height: 64px,
+          width: 64px
+        )
+      );
+      @include sas-transition(background-color);
+      border: 1px solid rgba($color-cerulean, 0.1);
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+    }
+  }
+  &--xl,
+  &--img {
+    display: flex;
+    #{$module}__btn {
+      @include sas-rem(font-size, 14px);
+    }
+  }
+  &--xl {
+    @include sas-rem(height, 40px);
+    #{$module}__btn {
+      border-width: 2px;
+      flex: 1;
+      padding: 0;
+    }
+  }
+  &--img {
+    height: auto;
+    justify-content: center;
+    #{$module}__btn {
+      @include sas-rem(
+        (
+          padding-left: 8px,
+          padding-right: 8px
+        )
+      );
+      border: none;
+      color: $color-black;
+      font-weight: 300;
+      &:hover,
+      &.is-active {
+        background-color: transparent;
+        #{$module}__ico {
+          color: $color-white;
+          &::before {
+            background-color: $color-cerulean;
+            border-color: $color-cerulean;
+          }
+        }
+      }
+      &.is-active {
+        font-weight: 500;
+      }
+    }
+  }
+}

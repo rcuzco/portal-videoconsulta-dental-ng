@@ -1,0 +1,373 @@
+.txt__big {
+  font-size: 28px;
+  line-height: 30px;
+  margin-bottom: 1rem;
+}
+
+// CONTAINER VIDEOLLAMADAS
+.app-publisher,
+.app-subscriber {
+  width: 50%;
+}
+
+.videocall {
+  &-container {
+    flex-grow: 4;
+  }
+
+  &-windows {
+    display: flex;
+    height: 325px;
+    width: 100%;
+  }
+}
+
+.chat-container {
+  display: block;
+  flex-grow: 1;
+
+  @media only screen and (min-width: 769px) {
+    max-width: 335px;
+  }
+}
+
+//MOCK PARA QUE NO SE PINTEN MÁS DE DOS VENTANAS
+.app-subscriber {
+  &>sas-subscriber:not(:first-child) {
+    display: none;
+  }
+}
+
+// TAMAÑO VIDEO EN CONTAINER SUBSCRIBER Y PUBLISHER
+.subscriber-container,
+.publisher-container {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-miniature-off {
+  display: none;
+}
+
+.full-screen-desktop {
+  height: 88%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .videocall-windows {
+    height: 100%;
+  }
+
+  & + .chat-container {
+    position: absolute;
+    right: 3rem;
+    top: calc(88% - 435px);
+    width: 100%;
+    z-index: 1;
+  }
+
+  ::ng-deep {
+    .setting-btn-position {
+      max-width: none;
+    }
+
+    .setting-btn-container {
+      width: 100%;
+    }
+  }
+
+  //ESTILOS MINIATURA FULL SCREEN
+  .icon-miniature-off {
+    cursor: pointer;
+    display: block;
+    font-size: 58px;
+    left: 2rem;
+    position: absolute;
+    top: 55px;
+    z-index: 1;
+  }
+
+  & .full-desktop-publisher {
+    .app-subscriber {
+      width: 100%;
+    }
+
+    .app-publisher {
+      width: auto;
+
+      ::ng-deep .OT_publisher {
+        bottom: 3rem;
+        height: 200px;
+        left: 3rem;
+        position: absolute;
+        width: 200px;
+        z-index: 1;
+
+        @media only screen and (min-width: 1281px) {
+          height: 300px;
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .videocall-container {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .videocall-windows {
+    height: 100%;
+  }
+
+  .app-subscriber {
+    bottom: 0;
+    height: calc(100% - 100px);
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    ::ng-deep {
+      .subscriber-container {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .app-publisher {
+    width: auto;
+
+    ::ng-deep {
+      .OT_publisher {
+        bottom: 3rem;
+        height: 230px;
+        left: 1rem;
+        position: absolute;
+        width: 180px;
+        z-index: 2;
+
+        .icon-miniature {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .margin-responsive {
+    margin: 0 -15px;
+  }
+
+  .txt-big {
+    display: none;
+  }
+
+  .chat-container {
+    bottom: calc(100px + 6rem);
+    margin-right: 2rem;
+    position: absolute;
+    right: 0;
+    width: 45%;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 568px) {
+  .app-publisher {
+    ::ng-deep {
+      .OT_publisher {
+        height: 200px;
+        width: 160px;
+      }
+    }
+  }
+
+  .chat-container {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.full-screen-publisher {
+  @media (max-width: 768px) {
+    .app-publisher {
+      height: calc(100% - 100px);
+      width: 100%;
+
+      ::ng-deep {
+        .publisher-container {
+          height: 100%;
+          position: relative;
+          width: 100%;
+        }
+
+        .OT_publisher {
+          bottom: auto;
+          height: 100%;
+          left: auto;
+          position: relative;
+          width: 100%;
+          z-index: auto;
+        }
+      }
+    }
+
+    .app-subscriber {
+      position: absolute;
+
+      ::ng-deep {
+
+        .subscriber-container,
+        .waiting-avatar-container {
+          bottom: 3rem;
+          height: 230px;
+          left: 1rem;
+          position: absolute;
+          width: 180px;
+          z-index: 1;
+
+          @media (max-width: 568px) {
+            height: 200px;
+            width: 160px;
+          }
+        }
+
+        .waiting-avatar-photo {
+          background-image: url('assets/img/bg/avatar-out-miniature.png');
+        }
+      }
+    }
+  }
+}
+
+.small-chat-display {
+  .chat-container {
+    max-width: 0;
+
+    @media (max-width: 768px) {
+      bottom: 0;
+      height: auto;
+      left: auto;
+      margin: auto;
+      position: inherit;
+      right: auto;
+      width: auto;
+    }
+  }
+
+  ::ng-deep {
+    .setting-btn-container {
+      width: 100%;
+    }
+
+    .chat-bubble-position {
+      left: 0;
+      margin: 0 auto;
+      max-width: 1110px;
+      position: relative;
+      top: 385px;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        bottom: 40px;
+        height: 0;
+        position: absolute;
+        top: auto;
+      }
+    }
+  }
+}
+
+.small-chat-display>.full-screen-desktop+.chat-container {
+  max-width: inherit;
+  margin-top: 2rem;
+  position: absolute;
+  top: calc(88% + 44px);
+  width: 100%;
+
+  ::ng-deep {
+    .chat-bubble-position {
+      max-width: 100%;
+      top: 0;
+    }
+  }
+}
+
+::ng-deep .OT_video-poster {
+  background-image: url('assets/img/bg/avatar-off-bg.PNG');
+  background-size: contain;
+  opacity: 1;
+
+  @media (max-width: 768px) {
+    background-image: url('assets/img/bg/avatar-off-bg-md.png');
+  }
+
+  @media (max-width: 568px) {
+    background-image: url('assets/img/bg/avatar-off-bg-sm.png');
+  }
+}
+
+.waiting-avatar {
+  &-container {
+    background-color: var(--real-black);
+    display: none;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  &-photo {
+    background-image: url('assets/img/bg/avatar-out-bg.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      background-image: url('assets/img/bg/avatar-out-bg-md.png');
+    }
+
+    @media (max-width: 568px) {
+      background-image: url('assets/img/bg/avatar-out-bg-sm.png');
+    }
+  }
+}
+
+.waiting-avatar-container:first-child {
+  display: block;
+}
+
+// APP SHARE SCREEN
+.app-share-screen {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  ::ng-deep sas-screen-share > div:first-child {
+    height: 100%;
+  }
+}
+
+.scren-share-frame {
+  border: 3px solid var(--error-red);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}

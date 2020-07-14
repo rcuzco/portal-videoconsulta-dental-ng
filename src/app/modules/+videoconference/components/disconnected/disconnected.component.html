@@ -1,0 +1,58 @@
+<div class="waiting-room-container">
+  <div class="overlay-background">
+    <div class="overlay-info-container">
+      <!-- CONTAINER MENSAJES DE SALA DE ESPERA -->
+      <!-- CLASE .date-to-start ESTILOS EN AZUL / CLASE .date-is-over ESTILOS EN ROJO -->
+      <div class="u-flex u-flex-column date-is-over" *ngIf="reason === disconnectedStatus.OVER">
+        <div class="date-headline u-divider-bottom-xl" translate="DISCONNECTED.OVER.TITLE"></div>
+        <div class="u-flex u-flex-align-center u-divider-bottom-xl">
+          <i class="icon-clock"> </i>
+          <!-- HORARIO Y FECHA -->
+          <div class="u-flex u-flex-column u-divider-left">
+            <div class="date-time">
+              {{startDate.hour}}:{{startDate.minute}}
+            </div>
+            <div class="date-day">
+              {{startDate.day}} {{'UTILS.OF' | translate}} {{'MONTHS.' + startDate.month | translate}} {{'UTILS.OF' | translate}} {{startDate.year}}
+            </div>
+          </div>
+        </div>
+        <div class="date-headline headline-small" translate="DISCONNECTED.OVER.TEXT"></div>
+      </div>
+
+      <!-- CONTAINER MENSAJE "TU CITA ESTÁ PROGRAMADA" -->
+      <div class="u-flex u-flex-column date-to-start" *ngIf="reason === disconnectedStatus.NOT_STARTED">
+        <div class="date-headline u-divider-bottom-xl" translate="DISCONNECTED.NOT_STARTED.TITLE"></div>
+        <div class="u-flex u-flex-align-center u-divider-bottom-xl">
+          <i class="icon-clock"> </i>
+          <!-- HORARIO Y FECHA -->
+          <div class="u-flex u-flex-column u-divider-left">
+            <div class="date-time">
+              {{startDate.hour}}:{{startDate.minute}}
+            </div>
+            <div class="date-day">
+              {{startDate.day}} {{'UTILS.OF' | translate}} {{'MONTHS.' + startDate.month | translate}} {{'UTILS.OF' | translate}} {{startDate.year}}
+            </div>
+          </div>
+        </div>
+        <div class="date-headline  headline-small" translate="DISCONNECTED.NOT_STARTED.TEXT"></div>
+      </div>
+      
+      <!-- CONTAINER DESCONEXIÓN -->
+      <div class="date-disconected u-flex u-flex-column" *ngIf="reason === disconnectedStatus.HUNG_UP" >
+        <div class="date-greeting" translate="DISCONNECTED.HUNG_UP.TITLE"></div>
+        <div class="u-flex u-flex-align-center u-divider-bottom-xl">
+          <i class="icon-phone-on"> </i>
+          <div (click)="reconnect()" class="date-txt u-divider-left" translate="DISCONNECTED.HUNG_UP.BUTTON"></div>
+        </div>
+        <div  class="date-headline" translate="DISCONNECTED.HUNG_UP.TEXT"></div>
+      </div>
+    </div>
+    <div class="overlay-info-container" *ngIf="reason === disconnectedStatus.HUNG_UP">
+      <div class="date-disconected u-flex u-flex-column">
+        <div class="date-greeting u-divider-bottom-xl" translate="DISCONNECTED.HELP_TEXT.TITLE"></div>
+        <div class="date-headline" translate="DISCONNECTED.HELP_TEXT.TEXT"></div>
+      </div>
+    </div>
+  </div>
+</div>

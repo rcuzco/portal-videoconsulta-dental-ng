@@ -1,0 +1,16 @@
+{
+  "type": "angular",
+  "node": "carbon",
+  "AngularVersion": "9",
+  "skipTest": false,
+  "skipQA": false,
+  "apps": [
+    {
+      "base-href": "/dental/videoconsulta/",
+      "repoName": "portal-videoconsulta-dental-ng",
+      "appName": "portal-videoconsulta-dental-ng",
+      "build": true,
+      "version": "1.0.2"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<div  class="publisher-container" [ngClass]="{'publishing': publishing}" #publisherDiv>
+</div>
+<i class="publisher-miniature icon-miniature" (click)="toggleFullScreenPublisher()"></i>
+<div class="setting-btn-position">
+    <div class="setting-btn-container u-flex">
+        <div class="setting-btn" *ngFor="let settingsBtn of settingsList; trackBy:orderButtons" (click)="settingsBtn.fn(publisher)">
+            <i [ngClass]="'icon-' + settingsBtn.icon"></i>
+        </div>
+    </div>
+</div>
+

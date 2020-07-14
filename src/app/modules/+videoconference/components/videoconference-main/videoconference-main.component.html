@@ -1,0 +1,44 @@
+<div class="txt__big" [innerHTML]="titlePage | translate"></div>
+<div class="margin-responsive">
+    <!-- AÑADIR CLASE .small-chat-display AL CONTRAER EL CHAT -->
+      <div class="u-flex" [ngClass]="{'small-chat-display': openChatBubble }">
+        <!-- AÑADIR CLASE .full-screen-publisher PARA ACCIÓN DEL CLICK EN ICONO MINIATURA DEL MODO RESPONSIVE  -->
+        <div class="videocall-container" [ngClass]="{'full-screen-desktop': fullScreen, 'full-screen-publisher': fullScreenPublisher}">
+          <div class="videocall-windows" [ngClass]="{'full-desktop-publisher': fullDesktopPublisher }" *ngIf="session && !disconnected">
+            <!-- COMPONENTE PUBLISHER -->
+            <div class="app-publisher" [ngClass]="{'full-share-screen': streamScreenShare}">
+                <sas-publisher [session]="session" [roomData]="roomData" 
+                (hangUp)="hungUp()"
+                (toggleSubscriberAudio)="toggleSubscriberAudio($event)"
+                (toggleFullScreen)="toggleFullScreen($event)"
+                (toggleFullScreenMiniature)="toggleFullScreenPublisher()"
+                (toggleShareFrame)="toggleShareFrame()"
+                ></sas-publisher>
+            </div>
+            <!-- COMPONENTE SCREEN-SHARE -->
+            <div class="app-share-screen" *ngIf="streamScreenShare">
+              <sas-screen-share [session]="session" [stream]="streamScreenShare"></sas-screen-share>            
+            </div>
+              <!-- COMPONENTE SUBSCRIBER -->
+            <div class="app-subscriber">
+                <sas-subscriber *ngFor="let stream of streams; trackBy:orderStreams" [stream]="stream" [session]="session" [subscriberAudio]="subscriberAudio"></sas-subscriber>
+                <div class="waiting-avatar-container">
+                  <div class="waiting-avatar-photo"></div>
+                </div>
+                <i class="icon-miniature-off" (click)="toggleFullDeskTopPublisher()"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="chat-container" *ngIf="session && !disconnected">
+          <sas-chat [session]="session" [name]="roomData.attendantName" (toggleChat)="toggleChat($event)"></sas-chat>
+        </div>
+    </div>
+</div>
+<!-- COMPONENTE DE DESCONEXIÓN -->
+<sas-disconnected *ngIf="disconnected" [reason]="disconnected" [roomSchedule]="roomSchedule" (fetchAndConnect)="fetchAndConnect()" (connect)="connect()"></sas-disconnected>
+
+<!-- SCREEN-SHARE-FRAME -->
+<div *ngIf="screenShareFrame" class="scren-share-frame">
+</div>
